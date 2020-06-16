@@ -5,6 +5,7 @@
  */
 package bancodados;
 
+import classes.Combo;
 import classes.MeioAviso;
 import classes.Natureza;
 import classes.RGO;
@@ -137,36 +138,128 @@ public class RgoDAO {
         return meioAvisos;
 
     }
-      public String pegarNumRgo() {
+    
+    public String pegarNumRgo() {
        PreparedStatement preparedStatement;
         try {           
             preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("SELECT" +
 "	CONCAT(" +
 "	sisbm_novo.rgo_indice.ano," +
-"	REPLACE ( REPLACE ( sigmavi.obm.Obm, 'º', '' ), ' ', '' )," +
-"	( sisbm_novo.rgo_indice.idrgo ) + 1" +
+"	sisbm_novo.ts_prefixos_rgos.prefixo_obm," +
+"	sisbm_novo.rgo_indice.idrgo " +
 "	) " +
 "       FROM" +
 "	sisbm_novo.rgo_indice" +
 "	INNER JOIN sigmavi.obm ON sigmavi.obm.id_obm = sisbm_novo.rgo_indice.obm" +
+"       INNER JOIN sisbm_novo.ts_prefixos_rgos "+
 "       WHERE" +
 "	sisbm_novo.rgo_indice.obm = ?" +
 "	AND sisbm_novo.rgo_indice.ano = YEAR ( now( ) ) " +
-"	AND sisbm_novo.rgo_indice.tipo = ? ");         
+"	AND sisbm_novo.rgo_indice.tipo = ? " +
+"       AND sisbm_novo.ts_prefixos_rgos.codigo_obm = ? " +
+"       AND sisbm_novo.ts_prefixos_rgos.corpdec = ?");         
                 preparedStatement.setInt(1, Usuario.getObm_idobm());
-                preparedStatement.setString(2,(Usuario.isMilitarADC() ? "MILITAR" :"ADC"));     
+                preparedStatement.setString(2,(Usuario.isMilitarADC() ? "MILITAR" :"PBC"));     
+                preparedStatement.setInt(3, Usuario.getObm_idobm());
+                preparedStatement.setInt(4,(Usuario.isMilitarADC() ? 0 : 1));     
+                
                 ResultSet resultSet = preparedStatement.executeQuery();
+                
+                atualizarIndice();
+                
                 while(resultSet.next()){
                     String numrgo = resultSet.getString(1);
                          ConexaoMysql.fecharConexao();
                          return numrgo;
                 }
+                
+                inserirIndice();
+                
+                return pegarNumRgo();
            
         } catch (SQLException ex) {
             Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
         }
         return "";
     }
+    
+    
+    public void atualizarIndice() throws SQLException{
+    
+        PreparedStatement preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("UPDATE rgo_indice SET idrgo = idrgo+1 WHERE obm = ? AND ano = YEAR(CURRENT_DATE) AND tipo = ?;");
+        
+        preparedStatement.setInt(1, Usuario.getObm_idobm());
+        preparedStatement.setString(2,(Usuario.isMilitarADC() ? "MILITAR" :"PBC")); 
+        
+        preparedStatement.executeUpdate();
+    
+    }
+    
+    public void inserirIndice() throws SQLException{
+    
+        PreparedStatement preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("INSERT INTO rgo_indice(obm,ano,idrgo,tipo) VALUES(?,YEAR(CURRENT_DATE),'1',?)");
+        
+        preparedStatement.setInt(1, Usuario.getObm_idobm());
+        preparedStatement.setString(2,(Usuario.isMilitarADC() ? "MILITAR" :"PBC")); 
+        
+        preparedStatement.execute();
+    
+    }
+    
+    
+    public List<Combo> getIntervencao() throws SQLException{
+        
+        ResultSet resultSet = ConexaoMysql.getConexaoMySQL().prepareStatement("SELECT idintervencao, intervencao FROM ts_intervencao where tipo = 'Cancelada' ORDER BY intervencao").executeQuery();
+
+        List<Combo> intervencoes = new ArrayList<>();
+
+        while (resultSet.next()) {
+            intervencoes.add(
+                    new Combo(
+                            resultSet.getInt(1),
+                            resultSet.getString(2)
+                    )
+            );
+        }
+        
+        ConexaoMysql.fecharConexao();
+        
+        return intervencoes;
+        
+    }
+    
+    
+    public void cancelarOcorrencia(int idIntervencao, String historico, int idrgo) throws SQLException{
+    
+        PreparedStatement preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("UPDATE rgo SET ts_statusbasico_idts_statusbasico = 6,"
+                + " realizados = 'Ocorrência cancelada.',"
+                + " ts_intervencao_idts_intervencao = ?,"
+                + " historico = ? "
+                + " WHERE idrgo = ? ");
+        
+        preparedStatement.setInt(1, idIntervencao);
+        preparedStatement.setString(2, historico);
+        preparedStatement.setInt(3, idrgo);
+        
+        
+        System.out.println(preparedStatement.toString());
+        
+        preparedStatement.execute();
+        
+    }
+    
+    public void encerrarOcorrencia(int idrgo) throws SQLException{
+        
+        PreparedStatement preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("UPDATE rgo SET ts_statusbasico_idts_statusbasico = 6, realizados = 'Ocorrência repassada para outro orgão.', ts_intervencao_idts_intervencao = 13 WHERE idrgo = ?");
+        
+        preparedStatement.setInt(1, idrgo);
+        
+        preparedStatement.execute();
+        
+        
+    }
+    
+    
     
     
 }

@@ -24,6 +24,8 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -91,6 +93,13 @@ public class EmpenharViaturaController implements Initializable{
     
     @FXML
     TextArea txtDescricaoComplemento;
+    
+    @FXML
+    Button btnCancelamento;
+    
+    @FXML
+    Button btnEncerrar;
+    
      
     private ObservableList<AnotacoesDespacho> obsComplemento;
     private ObservableList<TabelaViaturasDespacho> obsViaturas;
@@ -174,7 +183,7 @@ public class EmpenharViaturaController implements Initializable{
             obsComplemento = FXCollections.observableArrayList(new AnotacoesDespachoDAO().getAnotacoes(idrgo));
             tbComplemento.setItems(obsComplemento);
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabela.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -184,7 +193,7 @@ public class EmpenharViaturaController implements Initializable{
             obsComplemento.clear();
             obsComplemento.addAll(auxAnotacoes);
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabela.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -252,7 +261,7 @@ public class EmpenharViaturaController implements Initializable{
     @FXML
     private void onVoltar(ActionEvent event){
         try {
-            new DespachoTabela().start();
+            new DespachoTabelaController().start();
         } catch (IOException ex) {
             Logger.getLogger(TelaEmpenharViaturaController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -260,24 +269,19 @@ public class EmpenharViaturaController implements Initializable{
     
     @FXML
     private void onCancelar(ActionEvent event){
-        Parent root;        
-        try {
-            root = FXMLLoader.load(getClass().getResource("FormularioCancelamento.fxml"));
-            Scene scene = new Scene(root);
-       
-            Stage stage = new Stage();
-
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(EmpenharViaturaController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                
+        new FormularioCancelamentoController().start(idrgo, this::onFecharCancelamento);
         
     }
     
     @FXML
     private void onEncerrar(ActionEvent event){
-        
+        try {
+            new RgoDAO().encerrarOcorrencia(idrgo);
+            mostrarAlerta("Encerrada com sucesso!", Alert.AlertType.CONFIRMATION);
+        } catch (SQLException ex) {
+            mostrarAlerta("Ocorreu um erro ao encerrar a ocorrência!", Alert.AlertType.ERROR);
+        }
     }
     
     
@@ -321,8 +325,13 @@ public class EmpenharViaturaController implements Initializable{
         try {
             obsViaturas = FXCollections.observableArrayList( new TabelaViaturasDespachoDAO().getViaturasDespachos(idrgo));
             tbViaturas.setItems(obsViaturas);
+            
+            if(obsViaturas.size() > 0){
+                btnCancelamento.setVisible(false);
+                btnEncerrar.setVisible(false);
+            }
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabela.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -330,11 +339,32 @@ public class EmpenharViaturaController implements Initializable{
         try {
             obsViaturas.clear();
             obsViaturas.addAll(new TabelaViaturasDespachoDAO().getViaturasDespachos(idrgo));
+            
+            if(obsViaturas.size() > 0){
+                btnCancelamento.setVisible(false);
+                btnEncerrar.setVisible(false);
+            }
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabela.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
+    
+    public void onFecharCancelamento(Object ob){
+        
+        try {
+            new DespachoTabelaController().start();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaEmpenharViaturaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    private void mostrarAlerta(String corpo, Alert.AlertType tipo){
+        Alert alert = new Alert(tipo);
+        alert.setHeaderText(corpo);
+        alert.showAndWait();
+    }
     
     
 }

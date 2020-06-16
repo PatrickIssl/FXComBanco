@@ -65,7 +65,7 @@ public class MenuController implements Initializable{
     
     @FXML
     private void abrirDespacho(ActionEvent event) throws IOException{
-        DespachoTabela despachoTabela = new DespachoTabela();
+        DespachoTabelaController despachoTabela = new DespachoTabelaController();
         despachoTabela.start();
     }
     

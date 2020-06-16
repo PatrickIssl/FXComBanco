@@ -272,7 +272,7 @@ public class TelaEmpenharViaturaController implements Initializable {
             obsTabela.addAll( aux );
             obsTabelaClone.addAll( aux );
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabela.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -307,7 +307,7 @@ public class TelaEmpenharViaturaController implements Initializable {
             tabelaViaturas.setItems(obsTabela);
 
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabela.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
