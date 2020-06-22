@@ -5,6 +5,7 @@
  */
 package sysbmfx;
 
+import bancodados.DespachoDAO;
 import bancodados.RgoDAO;
 import classes.Combo;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -95,6 +97,33 @@ public class FormularioQTAController implements Initializable {
         alert.setHeaderText(corpo);
         alert.showAndWait();
 
+    }
+    
+    
+    @FXML
+    private void onSalvar(ActionEvent event) {
+
+        if (comboIntervencao.getSelectionModel().getSelectedItem() == null) {
+            mostrarAlerta("Erro", "Preencha a intervenção!");
+            return;
+        }
+        
+        if (txtDescritivo.getText().isEmpty()) {
+            mostrarAlerta("Erro", "Preencha o descritivo!");
+            return;
+        }
+        
+        
+        
+        try {
+            
+            new DespachoDAO().registrarQTA(idHorario,comboIntervencao.getSelectionModel().getSelectedItem().getId(),txtDescritivo.getText());
+            method.accept(new Object());
+            this.stage.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioCancelamentoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

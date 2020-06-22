@@ -15,6 +15,7 @@ public class Usuario {
     private static String nome_efetivo, RG, email, graduacao, cpf;
     private static int obm_idobm, subunidade_idsubunidade, municipio_presta_servico;
     private static boolean militarADC;
+    private static String nomeCidade;
 
     public static int getIdefetivo() {
         return idefetivo;
@@ -91,6 +92,14 @@ public class Usuario {
 
     public static boolean isMilitarADC() {
         return militarADC;
+    }
+
+    public static String getNomeCidade() {
+        return nomeCidade;
+    }
+
+    public static void setNomeCidade(String nomeCidade) {
+        Usuario.nomeCidade = nomeCidade;
     }
 
 

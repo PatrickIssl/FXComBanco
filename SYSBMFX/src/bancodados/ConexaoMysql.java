@@ -36,6 +36,7 @@ public class ConexaoMysql {
             String driverName = "com.mysql.jdbc.Driver";
             Class.forName(driverName);
             
+            //String host = "10.22.7.200";
             String host = "192.168.52.4";
             String database = "sisbm_novo";
             String url = "jdbc:mysql://" + host + "/" + database;

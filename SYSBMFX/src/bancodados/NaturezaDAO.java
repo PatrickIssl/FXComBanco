@@ -28,6 +28,8 @@ public class NaturezaDAO {
 
         List<Natureza> naturezas = new ArrayList<>();
 
+        naturezas.add(new Natureza(-1, "Selecione..."));
+        
         while (resultSet.next()) {
             naturezas.add(
                     new Natureza(
@@ -59,6 +61,8 @@ public class NaturezaDAO {
         ResultSet resultSet = preparedStatement.executeQuery();
         
         List<Subnatureza> subnaturezas = new ArrayList<>();
+        
+        subnaturezas.add(new Subnatureza(-1, "Selecione...",0));
 
         while (resultSet.next()) {
             subnaturezas.add(

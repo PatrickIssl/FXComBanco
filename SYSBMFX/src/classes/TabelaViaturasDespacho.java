@@ -31,6 +31,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import sysbmfx.FormularioQTAController;
 
 /**
  *
@@ -97,6 +98,15 @@ public class TabelaViaturasDespacho {
     public ObjectProperty getQTABtn() {
 
         btnQTA = new Button("QTA");
+        
+        btnQTA.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                
+                new FormularioQTAController().start(idHorarios, funcaoAtualizar);
+                
+            }
+        });
 
         return new SimpleObjectProperty((UltimoEvento == 7 ? "" : (QTA == 0 ? btnQTA : "QTA")));
     }

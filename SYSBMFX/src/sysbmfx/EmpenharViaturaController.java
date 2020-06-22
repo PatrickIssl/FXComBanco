@@ -151,15 +151,19 @@ public class EmpenharViaturaController implements Initializable{
         Parent root = FXMLLoader.load(getClass().getResource("EmpenharViatura.fxml"));
         Scene scene = new Scene(root);
 
-        SYSBMFX.stage.setScene(scene);
+        Stage stage = new Stage();
+        
+        stage.setScene(scene);
         
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
 
-        SYSBMFX.stage.setX(SYSBMFX.stage.getX());
-        SYSBMFX.stage.setY(SYSBMFX.stage.getY());
-        SYSBMFX.stage.setWidth(width);
-        SYSBMFX.stage.setHeight(height);
+        stage.setX(SYSBMFX.stage.getX());
+        stage.setY(SYSBMFX.stage.getY());
+        stage.setWidth(width);
+        stage.setHeight(height);
+        
+        stage.show();
 
     }
 
@@ -183,7 +187,7 @@ public class EmpenharViaturaController implements Initializable{
             obsComplemento = FXCollections.observableArrayList(new AnotacoesDespachoDAO().getAnotacoes(idrgo));
             tbComplemento.setItems(obsComplemento);
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DashboardDespachoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -193,7 +197,7 @@ public class EmpenharViaturaController implements Initializable{
             obsComplemento.clear();
             obsComplemento.addAll(auxAnotacoes);
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DashboardDespachoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -261,7 +265,7 @@ public class EmpenharViaturaController implements Initializable{
     @FXML
     private void onVoltar(ActionEvent event){
         try {
-            new DespachoTabelaController().start();
+            new DashboardDespachoController().start();
         } catch (IOException ex) {
             Logger.getLogger(TelaEmpenharViaturaController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -331,7 +335,7 @@ public class EmpenharViaturaController implements Initializable{
                 btnEncerrar.setVisible(false);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DashboardDespachoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -345,7 +349,7 @@ public class EmpenharViaturaController implements Initializable{
                 btnEncerrar.setVisible(false);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DespachoTabelaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DashboardDespachoController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -353,7 +357,7 @@ public class EmpenharViaturaController implements Initializable{
     public void onFecharCancelamento(Object ob){
         
         try {
-            new DespachoTabelaController().start();
+            new DashboardDespachoController().start();
         } catch (IOException ex) {
             Logger.getLogger(TelaEmpenharViaturaController.class.getName()).log(Level.SEVERE, null, ex);
         }

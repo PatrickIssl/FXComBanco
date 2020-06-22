@@ -9,6 +9,7 @@ import bancodados.ConexaoMysql;
 import bancodados.Login;
 import com.sun.deploy.ui.AboutDialog;
 import java.awt.Dialog;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
@@ -18,11 +19,15 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 
 /**
  *
@@ -38,10 +43,14 @@ public class TelaLogin implements Initializable {
 
     @FXML
     private void logar(ActionEvent event){
-                
+       login();
+    }
+    
+    private void login(){
+          
         try {
-            //if( new Login().realizarLogin(txtUsuario.getText(), txtSenha.getText()) ){
-            if( new Login().realizarLogin("105997043","123456") ){
+            if( new Login().realizarLogin(txtUsuario.getText(), txtSenha.getText()) ){
+            //if( new Login().realizarLogin("105997043","123456") ){
                 MenuController mc = new MenuController();
                 mc.start();
             }else{
@@ -59,11 +68,14 @@ public class TelaLogin implements Initializable {
         } 
     }
     
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        txtSenha.setOnKeyPressed(k ->{
+           final KeyCombination ENTER = new KeyCodeCombination(KeyCode.ENTER);
+            if (ENTER.match(k)) {
+               login(); 
+            }
+        });
         
         
     }    

@@ -206,4 +206,66 @@ public class DespachoDAO {
         
     }
     
+    
+    private int getUltimoEvento(int idHorario) throws SQLException{
+        
+        PreparedStatement preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("SELECT rgo_horarios.nome_ultimo_evento FROM	rgo_horarios WHERE rgo_horarios.idrgo_horarios = "+idHorario);
+        
+        ResultSet resultSet = preparedStatement.executeQuery();
+        
+        while (resultSet.next()) {
+            return resultSet.getInt(1);
+        }
+        
+        return 0;
+    }
+    
+    
+    
+    public void registrarQTA(int idHorario, int idIntervencao, String anotacao) throws SQLException{
+    
+        String horarios = "";
+        int ultimoEvento = getUltimoEvento(idHorario);
+        
+        switch(ultimoEvento){
+            case 2:
+            case 1:
+                horarios = " ,h_saidaL = current_timestamp ";
+                ultimoEvento = 3;
+                break;
+            case 3:
+                break;
+            case 5:
+            case 4:
+                horarios = " ,h_saidaH = current_timestamp ";
+                ultimoEvento = 6;
+                break;
+            default:
+                horarios = " ,h_chegadaL = current_timestamp, ";
+                horarios += " h_saidaL = current_timestamp ";
+                ultimoEvento = 3;
+                break;
+        }
+        
+        
+        PreparedStatement preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("UPDATE `sisbm_novo`.`rgo_horarios` SET "
+                + "`ts_intervencao` = ?, "
+                + "`anotacao_qta` = ?, "
+                + "`rg_responsavel_qta` = ?, "
+                + "`nome_responsavel_qta` = ?, "
+                + "`nome_ultimo_evento` = ?, "
+                + "`qta` = 1 " + horarios 
+                + "WHERE `idrgo_horarios` = ?");
+                
+        preparedStatement.setInt(1, idIntervencao);
+        preparedStatement.setString(2, anotacao);
+        preparedStatement.setString(3, Usuario.getRG());
+        preparedStatement.setString(4, Usuario.getNome_efetivo());
+        preparedStatement.setInt(5, ultimoEvento);
+        preparedStatement.setInt(6, idHorario);
+        
+        preparedStatement.execute();
+        
+    }
+    
 }

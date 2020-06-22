@@ -1,6 +1,10 @@
 package sysbmfx;
 
+import classes.Usuario;
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -28,9 +32,12 @@ import javafx.stage.Stage;
  */
 public class MenuController implements Initializable{
     
+    @FXML
+    Label lbUsuario;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        lbUsuario.setText(Usuario.getNome_efetivo() + " | " + Usuario.getRG());
     } 
 
     public void start() throws IOException{
@@ -58,15 +65,24 @@ public class MenuController implements Initializable{
     
     @FXML
     private void abrirCadastroRGO(ActionEvent event) throws IOException{
-        TelaCadastro cadastro = new TelaCadastro();
+        FormularioAberturaController cadastro = new FormularioAberturaController();
         cadastro.start();
         
     }
     
     @FXML
     private void abrirDespacho(ActionEvent event) throws IOException{
-        DespachoTabelaController despachoTabela = new DespachoTabelaController();
+        DashboardDespachoController despachoTabela = new DashboardDespachoController();
         despachoTabela.start();
+        
+        /*URI link;
+        try {
+            link = new URI("www.google.com");
+            Desktop.getDesktop().browse(link);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+        
     }
     
     

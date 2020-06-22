@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sysbmfx.TelaCadastro;
+import sysbmfx.FormularioAberturaController;
 
 /**
  *
@@ -178,7 +178,7 @@ public class RgoDAO {
                 return pegarNumRgo();
            
         } catch (SQLException ex) {
-            Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FormularioAberturaController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return "";
     }

@@ -30,7 +30,8 @@ public class Login {
 "	sisefetivo_novo.view_dados_efetivo.subunidade_idsubunidade," +
 "	sisefetivo_novo.view_dados_efetivo.id_municipio_presta_servico," +
 "	sisefetivo_novo.view_dados_efetivo.graduacao," +
-"	sisefetivo_novo.view_dados_efetivo.CPF" +
+"	sisefetivo_novo.view_dados_efetivo.CPF," +
+"       sisefetivo_novo.view_dados_efetivo.cidade_presta_servico"+                
 " FROM " +
 "	sisefetivo_novo.view_dados_efetivo " +
 "	INNER JOIN sisefetivo_novo.seguranca_users ON sisefetivo_novo.seguranca_users.efetivo_idefetivo = sisefetivo_novo.view_dados_efetivo.idefetivo \n" +
@@ -61,6 +62,7 @@ public class Login {
            Usuario.setMunicipio_presta_servico(resultSet.getInt("id_municipio_presta_servico"));
            Usuario.setGraduacao(resultSet.getString("graduacao"));
            Usuario.setCpf(resultSet.getString("CPF"));
+           Usuario.setNomeCidade(resultSet.getString("cidade_presta_servico"));
            
            ConexaoMysql.fecharConexao();
            
