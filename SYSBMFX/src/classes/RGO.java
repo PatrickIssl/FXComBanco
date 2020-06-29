@@ -5,6 +5,7 @@
  */
 package classes;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -15,7 +16,7 @@ public class RGO {
     
     private int idrgo;
     private String nr_rgo;
-    private Date datahora_recebimento;
+    private Timestamp datahora_recebimento;
     private int idmeio_aviso;
     private String nome_solicitante, telefone_solicitante;
     private int idNatureza, idSubnatureza;
@@ -53,11 +54,11 @@ public class RGO {
         this.nr_rgo = nr_rgo;
     }
 
-    public Date getDatahora_recebimento() {
+    public Timestamp getDatahora_recebimento() {
         return datahora_recebimento;
     }
 
-    public void setDatahora_recebimento(Date datahora_recebimento) {
+    public void setDatahora_recebimento(Timestamp datahora_recebimento) {
         this.datahora_recebimento = datahora_recebimento;
     }
 
@@ -277,7 +278,7 @@ public class RGO {
         this.subnatureza = subnatureza;
     }
 
-    public RGO(int idrgo, String nr_rgo, Date datahora_recebimento, int idmeio_aviso, String nome_solicitante, String telefone_solicitante, int idNatureza, int idSubnatureza, String urgente, String descritivo, String perimetro, String municipio, String bairro, String endereco, String tipo_num, int endereco_numero, String esquina, String ponto_referencia, String atendente, int idAtendente, String sb, String lat, String lng, int id_posto, int id_municipio, int id_obm_designada, int id_obm, int id_subunidade, Natureza natureza, Subnatureza subnatureza) {
+    public RGO(int idrgo, String nr_rgo, Timestamp datahora_recebimento, int idmeio_aviso, String nome_solicitante, String telefone_solicitante, int idNatureza, int idSubnatureza, String urgente, String descritivo, String perimetro, String municipio, String bairro, String endereco, String tipo_num, int endereco_numero, String esquina, String ponto_referencia, String atendente, int idAtendente, String sb, String lat, String lng, int id_posto, int id_municipio, int id_obm_designada, int id_obm, int id_subunidade, Natureza natureza, Subnatureza subnatureza) {
         this.idrgo = idrgo;
         this.nr_rgo = nr_rgo;
         this.datahora_recebimento = datahora_recebimento;

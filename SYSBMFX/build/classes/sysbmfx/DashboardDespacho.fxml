@@ -41,7 +41,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="701.0" layoutY="5.0" mnemonicParsing="false" onAction="#onVoltar" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 3;" text="Voltar para tela inicial" textFill="WHITE" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="20.0">
+            <Button layoutX="701.0" layoutY="5.0" mnemonicParsing="false" onAction="#onVoltar" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 3;" text="Voltar para tela inicial" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="20.0">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" />
                </graphic>

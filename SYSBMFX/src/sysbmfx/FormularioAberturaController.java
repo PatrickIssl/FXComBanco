@@ -9,11 +9,13 @@ import classes.Cidade;
 import classes.Logradouro;
 import classes.MeioAviso;
 import classes.Natureza;
+import classes.RGO;
 import classes.Subnatureza;
 import classes.Usuario;
 import impl.org.controlsfx.autocompletion.AutoCompletionTextFieldBinding;
 import impl.org.controlsfx.autocompletion.SuggestionProvider;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,6 +63,10 @@ import org.controlsfx.control.textfield.TextFields;
  */
 public class FormularioAberturaController implements Initializable {
 
+    private static int idrgoestatico;
+    
+    private int idrgo;
+    
     @FXML
     private TextArea areaDescritivo;
 
@@ -87,6 +93,8 @@ public class FormularioAberturaController implements Initializable {
     private ComboBox<Natureza> comboNatureza;
     @FXML
     private ComboBox<Subnatureza> comboSubnatureza;
+    @FXML
+    private Label lbTitulo;
     @FXML
     private TextField txtMunicipio;
     @FXML
@@ -118,6 +126,9 @@ public class FormularioAberturaController implements Initializable {
 
     private List<Subnatureza> subNaturezas = new ArrayList<>();
     private ObservableList<Subnatureza> obsSubnaturezas;
+    
+    private SuggestionProvider sugestoesBairros;
+    private SuggestionProvider sugestoesLogradouros;
 
     //Lista cidades para o autocomplete
     private List<Cidade> cidades = new ArrayList<>();
@@ -131,14 +142,21 @@ public class FormularioAberturaController implements Initializable {
 
     private List<Bairro> bairros = new ArrayList<>();
     private int idBairro = 0;
-
+    
+    @FXML
+    private Button btnSalvar;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        idrgo = idrgoestatico;
         inicializarCampos();
     }
 
-    public void start() throws IOException {
-
+    public void start(int idstart) throws IOException {
+        
+        idrgoestatico = idstart;
+        
         double height = SYSBMFX.stage.getHeight();
         double width = SYSBMFX.stage.getWidth();
 
@@ -146,7 +164,7 @@ public class FormularioAberturaController implements Initializable {
         Scene scene = new Scene(root);
 
         Stage stage = new Stage();
-        
+
         stage.setScene(scene);
 
         Screen screen = Screen.getPrimary();
@@ -156,17 +174,26 @@ public class FormularioAberturaController implements Initializable {
         stage.setY(SYSBMFX.stage.getY());
         stage.setWidth(width);
         stage.setHeight(height);
-        
-        stage.show();
 
+        stage.show();
+            
     }
 
+
+        
     private void inicializarCampos() {
+        
+        btnSalvar.setVisible(false);
+        
+        txtMunicipio.setText(Usuario.getNomeCidade());
+        idMunicipio = Usuario.getMunicipio_presta_servico();
+        
+        
 
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
         datefield.setText(dateFormat.format(date));
-        
+
         datefield.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -239,14 +266,13 @@ public class FormularioAberturaController implements Initializable {
 
                 }
             });
-            
+
             comboNatureza.getSelectionModel().select(0);
 
             obsSubnaturezas = FXCollections.observableArrayList(new NaturezaDAO().getSubnaturezas(0));
             comboSubnatureza.setItems(obsSubnaturezas);
             comboSubnatureza.getSelectionModel().select(0);
-            
-            
+
             labelAtendente.setText(Usuario.getNome_efetivo() + " " + Usuario.getRG());
 
             //meio aviso
@@ -261,11 +287,11 @@ public class FormularioAberturaController implements Initializable {
             //Cria campo autocomplete parametros 1º Campo textfield e 2º lista
             TextFields.bindAutoCompletion(txtMunicipio, cidades);
 
-            SuggestionProvider sugestoesBairros = SuggestionProvider.create(new ArrayList());
+            sugestoesBairros = SuggestionProvider.create(new ArrayList());
             new AutoCompletionTextFieldBinding<>(txtBairro, sugestoesBairros);
 
             //sugestoes logradouros
-            SuggestionProvider sugestoesLogradouros = SuggestionProvider.create(new ArrayList());
+            sugestoesLogradouros = SuggestionProvider.create(new ArrayList());
             new AutoCompletionTextFieldBinding<>(txtLogradouro, sugestoesLogradouros);
 
             new AutoCompletionTextFieldBinding<>(txtEsquina, sugestoesLogradouros);
@@ -280,41 +306,176 @@ public class FormularioAberturaController implements Initializable {
                             if (cidade.getCidade().equals(txtMunicipio.getText())) {
                                 idMunicipio = cidade.getIdcidade();
 
-                                try {
-
-                                    //Popula lista com as cidades do banco de dados
-                                    bairros = new EnderecoDAO().getBairro(idMunicipio);
-
-                                    sugestoesBairros.clearSuggestions();
-                                    sugestoesBairros.addPossibleSuggestions(bairros);
-
-                                    logradouros = new EnderecoDAO().getLogradouro(idMunicipio);
-                                    sugestoesLogradouros.clearSuggestions();
-                                    sugestoesLogradouros.addPossibleSuggestions(logradouros);
-
-                                } catch (SQLException ex) {
-                                    mostrarErroBD();
-                                }
-
+                                popularLocalizacao();
+                                
                                 break;
                             }
                         }
                     }
                 }
             });
+//POPULA CASO SEJA UMA EDIÇÃO            
+            if (idrgo != 0) {
+                
+                lbTitulo.setText("Formulário de Edição");
+                btnSalvar.setVisible(true);
+                
+                btnClassificarLigacao.setVisible(false);
+                btnIncluir.setVisible(false);
+                btnIncluirEDespachar.setVisible(false);
+                btnIncluirSemDespacho.setVisible(false); 
+                
+                RGO rgoobjeto = new RgoDAO().getRGO(idrgo);
+                dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date d = new Date(rgoobjeto.getDatahora_recebimento().getTime());
+              
+                datefield.setText(dateFormat.format(d));
+                fieldNomeSolicitante.setText(rgoobjeto.getNome_solicitante());
+                fieldNumSolicitante.setText(rgoobjeto.getTelefone_solicitante());
+                txtMunicipio.setText(rgoobjeto.getMunicipio());
+                txtBairro.setText(rgoobjeto.getBairro());
+                txtLogradouro.setText(rgoobjeto.getEndereco());
+             
+                if (rgoobjeto.getEndereco_numero() != 0) {
+                      txtnumouKm.setText(Integer.toString(rgoobjeto.getEndereco_numero()));
+                }else{
+                    txtEsquina.setText(rgoobjeto.getEsquina());
+                }
+                
+                txtPontoReferencia.setText(rgoobjeto.getPonto_referencia());
+                String perimetro = rgoobjeto.getPerimetro();
+
+                if (perimetro.equals("Urbano")) {
+                    radioUrbano.setSelected(true);
+                    
+                }else if(perimetro.equals("Rural")){
+                   radioRural.setSelected(true);
+                    
+                }
+                labelAtendente.setText(rgoobjeto.getAtendente());
+                areaDescritivo.setText(rgoobjeto.getDescritivo());
+                
+                comboNatureza.setValue(rgoobjeto.getNatureza());                
+                comboNatureza.getSelectionModel().select(rgoobjeto.getNatureza());
+                
+                comboSubnatureza.setValue(rgoobjeto.getSubnatureza());
+                comboSubnatureza.getSelectionModel().select(rgoobjeto.getSubnatureza());
+                
+                
+                for (MeioAviso meioAviso : obsMeioAviso) {
+                    if(meioAviso.getIdts_meioaviso() == rgoobjeto.getIdmeio_aviso() )
+                        comboMeioAviso.setValue(meioAviso);
+                }
+                
+                
+                
             
+                
+              
+                
+                
+            }
             
-            txtMunicipio.setText(Usuario.getNomeCidade());
-            idMunicipio = Usuario.getMunicipio_presta_servico();
+        } catch (SQLException ex) {
+            mostrarErroBD();
+        }       
+        popularLocalizacao();
+
+        }
+    
+  
+   
+
+    private void popularLocalizacao() {
+
+        try {
+
+            //Popula lista com as cidades do banco de dados
+            bairros = new EnderecoDAO().getBairro(idMunicipio);
+
+            sugestoesBairros.clearSuggestions();
+            sugestoesBairros.addPossibleSuggestions(bairros);
+
+            logradouros = new EnderecoDAO().getLogradouro(idMunicipio);
+            sugestoesLogradouros.clearSuggestions();
+            sugestoesLogradouros.addPossibleSuggestions(logradouros);
+
         } catch (SQLException ex) {
             mostrarErroBD();
         }
 
     }
+
     @FXML
-    private void onClickLigacao(ActionEvent event) throws IOException{
+    private void onClickLigacao(ActionEvent event) throws IOException {
         ClassificarLigacaoController ligacao = new ClassificarLigacaoController();
         ligacao.start();
+
+    }
+    @FXML
+    private void onClickSalvar(ActionEvent event) throws ParseException, SQLException{
+        System.out.println(comboSubnatureza.getSelectionModel().getSelectedIndex());
+        
+              String date = datefield.getText();
+                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date data = new Date();
+                data = dateFormat.parse(date);
+                dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+                date = dateFormat.format(data);
+                int numouKm;
+                 if (txtnumouKm.getText().equals("")) {
+                    numouKm = 0;
+                } else {
+                    numouKm = Integer.parseInt(txtnumouKm.getText());
+
+                }
+
+                String nmKmCruzamento;
+                if (radioN.isSelected()) {
+                    nmKmCruzamento = "n°";
+                } else if (radioKm.isSelected()) {
+                    nmKmCruzamento = "km";
+                } else if (radioCruzamento.isSelected()) {
+                    nmKmCruzamento = "Esquina";
+                } else {
+                    nmKmCruzamento = "";
+                }
+
+                String perimetro;
+                if (radioUrbano.isSelected()) {
+                    perimetro = "Urbano";
+                } else if (radioRural.isSelected()) {
+                    perimetro = "Rural";
+                } else {
+                    perimetro = "";
+                }
+            
+            
+                
+                
+              PreparedStatement preparedStatement;
+                preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("UPDATE `sisbm_novo`.`rgo` SET `datahora_recebimento` = ?, `ts_meioaviso_idts_meioaviso` = ?, `solicitante_nome` = ?, `solicitante_telefone` = ?, `ts_nateventos_idts_nateventos` = ?, `ts_subnateventos_idts_subnateventos` = ?, `descritivo` = ?, `perimetro` = ?, `municipio` = ?, `bairro` = ?, `endereco_solicitacao` =  ?, `tipo_num` = ?, `endereco_num` = ?, `esquina` = ?, `ponto_referencia` = ? WHERE `idrgo` = ? ;");
+                preparedStatement.setString(1, date);
+                preparedStatement.setInt(2, comboMeioAviso.getSelectionModel().getSelectedItem().getIdts_meioaviso());
+                preparedStatement.setString(3, fieldNomeSolicitante.getText());
+                preparedStatement.setString(4, fieldNumSolicitante.getText());
+                preparedStatement.setInt(5,comboNatureza.getSelectionModel().getSelectedItem().getIdnatureza());
+                preparedStatement.setInt(6,comboSubnatureza.getSelectionModel().getSelectedItem().getIdsubnatureza());
+                preparedStatement.setString(7,areaDescritivo.getText());
+                preparedStatement.setString(8,perimetro);
+                preparedStatement.setString(9,txtMunicipio.getText());
+                preparedStatement.setString(10,txtBairro.getText());
+                preparedStatement.setString(11,txtLogradouro.getText());
+                preparedStatement.setString(12,nmKmCruzamento);
+                preparedStatement.setInt(13,numouKm);
+                preparedStatement.setString(14,txtEsquina.getText());
+                preparedStatement.setString(15,txtPontoReferencia.getText());
+                preparedStatement.setInt(16,idrgo);
+                preparedStatement.executeUpdate();
+   
+        
+        
+        
         
         
     }
@@ -357,14 +518,14 @@ public class FormularioAberturaController implements Initializable {
 
     @FXML
     private void onclickIncluirSemDespacho(ActionEvent event) throws SQLException {
-        incluir(0,false);
+        incluir(0, false);
     }
 
     @FXML
     private void onclickIncluirEDespachar(ActionEvent event) throws IOException, SQLException {
-        incluir(1,true);        
+        incluir(1, true);
     }
-    
+
     @FXML
     private void onclickCancelar(ActionEvent event) throws IOException, SQLException {
         MenuController menu = new MenuController();
@@ -373,7 +534,7 @@ public class FormularioAberturaController implements Initializable {
 
     @FXML
     private void onclickIncluir(ActionEvent event) throws SQLException {
-        incluir(1,false);
+        incluir(1, false);
     }
 
     private void incluir(int i, boolean abrirDespacho) throws SQLException {
@@ -432,8 +593,8 @@ public class FormularioAberturaController implements Initializable {
                 Date data = new Date();
                 data = dateFormat.parse(date);
                 dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-                System.out.println(dateFormat.format(data));
                 date = dateFormat.format(data);
+                
                 int meioAviso = comboMeioAviso.getSelectionModel().getSelectedItem().getIdts_meioaviso();
                 String nomeSolicitante = fieldNomeSolicitante.getText();
                 String numeroSolicitante = fieldNumSolicitante.getText();
@@ -486,7 +647,7 @@ public class FormularioAberturaController implements Initializable {
                 int obm_designada = Usuario.getObm_idobm();
 
                 PreparedStatement preparedStatement;
-                preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("INSERT INTO `sisbm_novo`.`rgo`(`nr_rgo`, `datahora_recebimento`, `ts_meioaviso_idts_meioaviso`, `solicitante_nome`, `solicitante_telefone`, `ts_nateventos_idts_nateventos`, `ts_subnateventos_idts_subnateventos`, `descritivo`, `perimetro`, `municipio`, `bairro`, `endereco_solicitacao`, `tipo_num`, `endereco_num`, `esquina`,`realizados`, `ponto_referencia`, `descricao_bensatingidos`, `descricao_bensrecolhidos`, `bens_entregue`, `fk_id_obm`, `fk_id_unidade`, `sb`, `acidente_trabalho`, `divulgar_imprensa`, `apoio`, `vitimas`, `veiculos_envol`, `prod_perigoso`, `ts_intervencao_idts_intervencao`,`ts_statusbasico_idts_statusbasico`,`id_natureza_nova`,`id_subnatureza_nova`,`fk_id_posto`,`metodoGeo`,`tabela_despacho`,`indicio_crime`,`id_postopgv`,`geocoding_trusted`,`empenhada_samu`,`id_municipio`,`id_obm_designada`,`urgente`,atendente, id_atendente)VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?);",Statement.RETURN_GENERATED_KEYS);
+                preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("INSERT INTO `sisbm_novo`.`rgo`(`nr_rgo`, `datahora_recebimento`, `ts_meioaviso_idts_meioaviso`, `solicitante_nome`, `solicitante_telefone`, `ts_nateventos_idts_nateventos`, `ts_subnateventos_idts_subnateventos`, `descritivo`, `perimetro`, `municipio`, `bairro`, `endereco_solicitacao`, `tipo_num`, `endereco_num`, `esquina`,`realizados`, `ponto_referencia`, `descricao_bensatingidos`, `descricao_bensrecolhidos`, `bens_entregue`, `fk_id_obm`, `fk_id_unidade`, `sb`, `acidente_trabalho`, `divulgar_imprensa`, `apoio`, `vitimas`, `veiculos_envol`, `prod_perigoso`, `ts_intervencao_idts_intervencao`,`ts_statusbasico_idts_statusbasico`,`id_natureza_nova`,`id_subnatureza_nova`,`fk_id_posto`,`metodoGeo`,`tabela_despacho`,`indicio_crime`,`id_postopgv`,`geocoding_trusted`,`empenhada_samu`,`id_municipio`,`id_obm_designada`,`urgente`,atendente, id_atendente)VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?,?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?);", Statement.RETURN_GENERATED_KEYS);
                 preparedStatement.setString(1, numrgo);
                 preparedStatement.setString(2, date);
                 preparedStatement.setInt(3, meioAviso);
@@ -532,13 +693,13 @@ public class FormularioAberturaController implements Initializable {
                 preparedStatement.setString(43, "Sim");
                 preparedStatement.setString(44, Usuario.getNome_efetivo());
                 preparedStatement.setString(45, Usuario.getRG());
-                
+
                 preparedStatement.execute();
-                
+
                 ResultSet resultSet = preparedStatement.getGeneratedKeys();
-                
-                while (resultSet.next()) {                    
-                    String comando = "curl -X GET http://www.bombeiroscascavel.com.br/sysbmnew/georeferenciar_v3/?idrgo="+resultSet.getInt(1)+"&retornoFormulario=formulario_abertura";
+
+                while (resultSet.next()) {
+                    String comando = "curl -X " + (!SYSBMFX.enderecoProxy.isEmpty() ? "--proxy " + SYSBMFX.enderecoProxy + ":" + SYSBMFX.portaProxy : "") + " GET " + SYSBMFX.enderecoGeocoding + resultSet.getInt(1);
                     System.out.println(comando);
                     Process process;
                     try {
@@ -548,23 +709,21 @@ public class FormularioAberturaController implements Initializable {
                         System.out.println("erro geo");
                         Logger.getLogger(FormularioAberturaController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
-                    Alert a =  new Alert(Alert.AlertType.CONFIRMATION);
+
+                    Alert a = new Alert(Alert.AlertType.CONFIRMATION);
                     a.setHeaderText("Ocorrência registrada com sucesso!");
                     a.showAndWait();
 
-                    if(abrirDespacho){
+                    if (abrirDespacho) {
                         try {
                             new EmpenharViaturaController().start(resultSet.getInt(1));
                         } catch (IOException ex) {
                             Logger.getLogger(FormularioAberturaController.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
-                    
+
                 }
-                
-                
-                
+
                 limparCampos();
 
             } catch (ParseException ex) {
@@ -574,13 +733,12 @@ public class FormularioAberturaController implements Initializable {
         }
 
     }
-    
-    private void limparCampos(){
-    
+
+    private void limparCampos() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
         datefield.setText(dateFormat.format(date));
-        
+
         fieldNumSolicitante.setText("");
         fieldNomeSolicitante.setText("");
         txtBairro.setText("");
@@ -591,17 +749,17 @@ public class FormularioAberturaController implements Initializable {
         radioN.selectedProperty().set(true);
         radioKm.selectedProperty().set(false);
         radioCruzamento.selectedProperty().set(false);
-        
+
         radioUrbano.selectedProperty().set(true);
         radioRural.selectedProperty().set(false);
-        
+
         comboNatureza.getSelectionModel().select(0);
         comboSubnatureza.getSelectionModel().select(0);
-        
+
         comboMeioAviso.getSelectionModel().select(0);
-    
+
         areaDescritivo.setText("");
-        
+
     }
 
 }

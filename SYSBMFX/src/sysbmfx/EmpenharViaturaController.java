@@ -5,6 +5,7 @@ import bancodados.DespachoDAO;
 import bancodados.RgoDAO;
 import bancodados.TabelaViaturasDespachoDAO;
 import classes.AnotacoesDespacho;
+import classes.Log;
 import classes.TabelaViaturasDespacho;
 import classes.RGO;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
@@ -253,7 +254,7 @@ public class EmpenharViaturaController implements Initializable{
     private void empenharViatura(ActionEvent event){
         
         try {
-            new TelaEmpenharViaturaController().start(idrgo);
+            new TelaEmpenharViaturaController().start(idrgo,this::popularTabelaViaturas);
         } catch (IOException ex) {
             Logger.getLogger(EmpenharViaturaController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -341,6 +342,8 @@ public class EmpenharViaturaController implements Initializable{
     
     public void popularTabelaViaturas(Object ob){
         try {
+            Log.gravar(this.getClass(),"Atualizando viaturas!");
+            
             obsViaturas.clear();
             obsViaturas.addAll(new TabelaViaturasDespachoDAO().getViaturasDespachos(idrgo));
             
@@ -348,6 +351,9 @@ public class EmpenharViaturaController implements Initializable{
                 btnCancelamento.setVisible(false);
                 btnEncerrar.setVisible(false);
             }
+            
+            Log.gravar(this.getClass(),"Viaturas atualizadas!");
+            
         } catch (SQLException ex) {
             Logger.getLogger(DashboardDespachoController.class.getName()).log(Level.SEVERE, null, ex);
         }

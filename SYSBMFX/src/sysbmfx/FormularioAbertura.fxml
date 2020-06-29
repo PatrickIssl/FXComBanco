@@ -113,6 +113,11 @@
             <TextArea fx:id="areaDescritivo" prefHeight="66.0" prefWidth="828.0" GridPane.columnSpan="4" GridPane.rowIndex="11" GridPane.rowSpan="3" />
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="1073.0" GridPane.columnSpan="6" GridPane.rowIndex="15">
                <children>
+                  <Button fx:id="btnSalvar" mnemonicParsing="false" onAction="#onClickSalvar" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #388e3c;" text="Salvar" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
                   <Button fx:id="btnIncluirSemDespacho" mnemonicParsing="false" onAction="#onclickIncluirSemDespacho" prefHeight="33.0" prefWidth="149.0" style="-fx-background-color: #8C2B2B;" text="Incluir Sem Despachar" textFill="WHITE">
                      <HBox.margin>
                         <Insets right="10.0" />
@@ -138,12 +143,12 @@
             </AnchorPane>
             <AnchorPane prefHeight="51.0" style="-fx-background-color: #44576B;" GridPane.columnSpan="6">
                <children>
-                  <Label layoutX="38.0" layoutY="6.0" text="Formulario de abertura" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                  <Label fx:id="lbTitulo" layoutX="38.0" layoutY="6.0" text="Formulario de abertura" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnSair" layoutX="934.0" layoutY="3.0" mnemonicParsing="false" onAction="#onclickCancelar" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 3;" text="Voltar para tela inicial" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+                  <Button fx:id="btnSair" layoutX="934.0" layoutY="3.0" mnemonicParsing="false" onAction="#onclickCancelar" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 3;" text="Voltar para tela inicial" textFill="WHITE" visible="false" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" />
                      </graphic></Button>

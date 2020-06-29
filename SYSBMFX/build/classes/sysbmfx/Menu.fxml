@@ -36,6 +36,14 @@
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </Button>
+                  <Button mnemonicParsing="false" onAction="#buscarOcorrencia" prefHeight="54.0" prefWidth="246.0" style="-fx-background-color: #579D57; -fx-background-radius: 10;" text="Buscar ocorrência" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
             </HBox>
             <AnchorPane prefHeight="1.0" prefWidth="200.0" style="-fx-background-color: #ccc;" />

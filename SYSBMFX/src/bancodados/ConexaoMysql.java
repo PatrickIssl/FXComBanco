@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sysbmfx.SYSBMFX;
 
 /**
  *
@@ -36,8 +37,11 @@ public class ConexaoMysql {
             String driverName = "com.mysql.jdbc.Driver";
             Class.forName(driverName);
             
-            //String host = "10.22.7.200";
-            String host = "192.168.52.4";
+            String host = SYSBMFX.ipServidor;
+            
+            System.out.println(host);
+            
+            //String host = "192.168.52.4";
             String database = "sisbm_novo";
             String url = "jdbc:mysql://" + host + "/" + database;
             String username = "root";

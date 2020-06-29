@@ -35,7 +35,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3">
                <children>
                   <Button mnemonicParsing="false" onAction="#onFiltrarViaturas" text="Filtrar" />
-                  <Button mnemonicParsing="false" onAction="#onVoltar" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 3px;" text="Voltar para ocorrência" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#onVoltar" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 3px;" text="Voltar para ocorrência" textFill="WHITE" visible="false">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>

@@ -116,12 +116,18 @@ public class TabelaViaturasDespacho {
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                
+                Log.gravar(this.getClass(),"Clicado no botao "+campo+" | idHorarios: "+idHorarios);
+                
                 try {
                     if (new TabelaViaturasDespachoDAO().atualizarHorario(idHorarios, campo, ultimoEvento)) {
+                        
+                        Log.gravar(this.getClass(),"Horario atualizado com sucesso | "+campo+" | idHorarios: "+idHorarios);
                         funcaoAtualizar.accept(new Object());
+                        
                     }
                 } catch (SQLException ex) {
-                    Logger.getLogger(TabelaViaturasDespacho.class.getName()).log(Level.SEVERE, null, ex);
+                    Log.gravar(this.getClass(),"Erro atualizar horarios "+campo+" | IdHorario: "+idHorarios+" | Erro: "+ex.getMessage());
                 }
 
             }

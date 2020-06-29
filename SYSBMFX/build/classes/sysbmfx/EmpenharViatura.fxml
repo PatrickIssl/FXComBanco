@@ -108,7 +108,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Button layoutX="789.0" layoutY="1.0" mnemonicParsing="false" onAction="#onVoltar" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 3px;" text="Voltar para o despacho" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+                  <Button layoutX="789.0" layoutY="1.0" mnemonicParsing="false" onAction="#onVoltar" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 3px;" text="Voltar para o despacho" textFill="WHITE" visible="false" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" />
                      </graphic>

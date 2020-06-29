@@ -1,14 +1,10 @@
 package sysbmfx;
 
+import classes.Log;
 import classes.Usuario;
-import java.awt.Desktop;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +14,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Screen;
-import javafx.stage.Stage;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -65,13 +60,19 @@ public class MenuController implements Initializable{
     
     @FXML
     private void abrirCadastroRGO(ActionEvent event) throws IOException{
+        
+        Log.gravar(this.getClass(),"Clicado no botão cadastrar RGO!");
+        
         FormularioAberturaController cadastro = new FormularioAberturaController();
-        cadastro.start();
+        cadastro.start(0);
         
     }
     
     @FXML
     private void abrirDespacho(ActionEvent event) throws IOException{
+        
+        Log.gravar(this.getClass(),"Clicado no botão despacho!");
+        
         DashboardDespachoController despachoTabela = new DashboardDespachoController();
         despachoTabela.start();
         
@@ -84,6 +85,26 @@ public class MenuController implements Initializable{
         }*/
         
     }
+    
+    @FXML
+    private void buscarOcorrencia(ActionEvent event) throws IOException{
+        
+        Log.gravar(this.getClass(),"Clicado no botão buscar ocorrencia!");
+        
+        BuscarOcorrenciaController buscarOcorrencia = new BuscarOcorrenciaController();
+        buscarOcorrencia.start();
+        
+        /*URI link;
+        try {
+            link = new URI("www.google.com");
+            Desktop.getDesktop().browse(link);
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+        
+    }
+    
+    
     
     
     

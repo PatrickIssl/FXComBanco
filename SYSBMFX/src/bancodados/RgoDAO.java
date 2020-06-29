@@ -79,7 +79,7 @@ public class RgoDAO {
             RGO rgo = new RGO(
                     resultSet.getInt(1),
                     resultSet.getString(2),
-                    resultSet.getDate(3),
+                    resultSet.getTimestamp(3),
                     resultSet.getInt(4),
                     resultSet.getString(5),
                     resultSet.getString(6),
@@ -257,6 +257,52 @@ public class RgoDAO {
         preparedStatement.execute();
         
         
+    }
+    
+    
+    
+    public List<RGO> buscarOcorrencia(String nrRgo, int idObm, int idFracao, int idMunicipio, int idPosto, int idNatureza, int idSubnatureza, String endereco, String vitima, String data1, String data2, int idOficial, List idStatus) throws SQLException{
+    
+        PreparedStatement preparedStatement = ConexaoMysql.getConexaoMySQL().prepareStatement("SELECT " +
+                    "rgo.idrgo, " +
+                    "rgo.nr_rgo, " +
+                    "rgo.fk_id_unidade, " +
+                    "rgo.fk_id_posto, " +
+                    "rgo.id_municipio, " +
+                    "rgo.id_obm_designada, " +
+                    "rgo.ts_nateventos_idts_nateventos, " +
+                    "rgo.ts_subnateventos_idts_subnateventos, " +
+                    "IF(rgo.tipo_num = 'Esquina',CONCAT(rgo.endereco_solicitacao,' ESQUINA COM ',rgo.esquina),CONCAT(rgo.endereco_solicitacao,', ',tipo_num,' ',endereco_num)) AS endereco, " +
+                    "rgo.id_oficial_area, " +
+                    "rgo.ts_statusbasico_idts_statusbasico, " +
+                    "rgo_vitima.nome_vitima AS vitimas, " +
+                    "rgo.datahora_recebimento, " +
+                    "sigmavi_obm.Obm, " +
+                    "rgo.municipio, " +
+                    "ts_nateventos.evento, " +
+                    "ts_subnateventos.descricao, " +
+                    "oficial_area, " +
+                    "IF (id_oficial_area <> 0, oficial_area, IF(id_chefe_guarnicao <> 0, chefe_guarnicao, atendente)) AS responsavel, " +
+                    "GROUP_CONCAT(DISTINCT ' - ',rgo_viaturas.nome_viatura SEPARATOR '<BR/>') AS viaturas, " +
+                    "ts_statusbasico.`status`, " +
+                    "view_area_atuacao.id_fracao, " +
+                    "view_area_atuacao.nome_fracao, " +
+                    "rgo.lat, " +
+                    "rgo.lng " +
+                "FROM " +
+                    "rgo " +
+                "LEFT JOIN rgo_vitima ON rgo_vitima.rgo_idrgo = rgo.idrgo " +
+                "LEFT JOIN sigmavi_obm ON sigmavi_obm.id_obm = rgo.id_obm_designada " +
+                "LEFT JOIN ts_nateventos ON rgo.ts_nateventos_idts_nateventos = ts_nateventos.idts_nateventos " +
+                "LEFT JOIN ts_subnateventos ON rgo.ts_subnateventos_idts_subnateventos = ts_subnateventos.idts_subnateventos " +
+                "LEFT JOIN rgo_viaturas ON rgo_viaturas.rgo_idrgo = rgo.idrgo " +
+                "LEFT  JOIN ts_statusbasico ON rgo.ts_statusbasico_idts_statusbasico = ts_statusbasico.idts_statusbasico " +
+                "LEFT JOIN view_area_atuacao ON view_area_atuacao.id_cidade = rgo.id_municipio " +
+                "GROUP BY idrgo " +
+                "ORDER BY rgo.datahora_recebimento DESC");
+        
+    
+        return null;
     }
     
     

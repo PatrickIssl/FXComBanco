@@ -2,6 +2,7 @@ package sysbmfx;
 
 import bancodados.DespachoDAO;
 import classes.ListaRGO;
+import classes.Log;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -39,7 +40,7 @@ import javafx.stage.WindowEvent;
  */
 /**
  *
- * @author Administrador
+ * @author Vinicius Teider
  */
 public class DashboardDespachoController implements Initializable {
 
@@ -175,10 +176,13 @@ public class DashboardDespachoController implements Initializable {
 
                 if (tbDespachadas.getSelectionModel().getSelectedItem() != null) {
 
+                    
+                    
                     ListaRGO item = (ListaRGO) tbDespachadas.getSelectionModel().getSelectedItem();
 
                     try {
                         //timer.cancel();
+                        Log.gravar(this.getClass(),"tela da ocorrência aberta com o id do rgo: "+item.getIdrgo());
                         new EmpenharViaturaController().start(item.getIdrgo(), item.getIdNotificacao());
                     } catch (IOException ex) {
                         Logger.getLogger(DashboardDespachoController.class.getName()).log(Level.SEVERE, null, ex);
@@ -196,16 +200,19 @@ public class DashboardDespachoController implements Initializable {
             public void run() {
 
                 try {
-                    //obsDespachar = FXCollections.observableArrayList(new DespachoDAO().getDespachar(cidadesCapitoes));
+                    Log.gravar(this.getClass(),"Atualizando aba a despachar");
                     List<ListaRGO> auxDespachar = new DespachoDAO().getDespachar(cidadesCapitoes);
                     obsDespachar.clear();
                     obsDespachar.addAll(auxDespachar);
+                    Log.gravar(this.getClass(),"Aba a despachar atualizada");
 
+                    Log.gravar(this.getClass(),"Atualizando aba despachadas");
                     List<ListaRGO> auxDespachadas = new DespachoDAO().getDespachadas(cidadesCapitoes);
                     obsDespachadas.clear();
                     obsDespachadas.addAll(auxDespachadas);
+                    Log.gravar(this.getClass(),"Aba despachadas atualizadas");
                 } catch (SQLException ex) {
-                    Logger.getLogger(DashboardDespachoController.class.getName()).log(Level.SEVERE, null, ex);
+                    Log.gravar(this.getClass(),"Erro ao atualizar abas no despacho: "+ex.getMessage());
                 }
 
             }

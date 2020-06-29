@@ -1,0 +1,435 @@
+25/06/2020 14:29:44 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!%n25/06/2020 14:30:33 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!%n25/06/2020 14:30:58 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 14:31:13 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 14:53:02 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 14:53:10 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 14:53:10 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 14:53:13 ------> sysbmfx.MenuController ------- Clicado no botão despacho!
+25/06/2020 14:53:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:53:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:53:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:53:18 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:53:22 ------> sysbmfx.DashboardDespachoController$2 ------- tela da ocorrência aberta com o id do rgo: 432855
+25/06/2020 14:53:27 ------> classes.TabelaViaturasDespacho$2 ------- Clicado no botao h_chegadaL | idHorarios: 468186
+25/06/2020 14:53:27 ------> classes.TabelaViaturasDespacho$2 ------- Horario atualizado com sucesso | h_chegadaL | idHorarios: 468186
+25/06/2020 14:53:27 ------> sysbmfx.EmpenharViaturaController ------- Atualizando viaturas!
+25/06/2020 14:53:27 ------> sysbmfx.EmpenharViaturaController ------- Viaturas atualizadas!
+25/06/2020 14:53:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:53:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:53:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:53:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:53:32 ------> classes.TabelaViaturasDespacho$2 ------- Clicado no botao h_saidaL | idHorarios: 468186
+25/06/2020 14:53:32 ------> classes.TabelaViaturasDespacho$2 ------- Horario atualizado com sucesso | h_saidaL | idHorarios: 468186
+25/06/2020 14:53:32 ------> sysbmfx.EmpenharViaturaController ------- Atualizando viaturas!
+25/06/2020 14:53:32 ------> sysbmfx.EmpenharViaturaController ------- Viaturas atualizadas!
+25/06/2020 14:53:34 ------> classes.TabelaViaturasDespacho$2 ------- Clicado no botao h_chegadaL | idHorarios: 468189
+25/06/2020 14:53:34 ------> classes.TabelaViaturasDespacho$2 ------- Horario atualizado com sucesso | h_chegadaL | idHorarios: 468189
+25/06/2020 14:53:34 ------> sysbmfx.EmpenharViaturaController ------- Atualizando viaturas!
+25/06/2020 14:53:34 ------> sysbmfx.EmpenharViaturaController ------- Viaturas atualizadas!
+25/06/2020 14:53:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:53:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:53:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:53:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:53:47 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 14:53:52 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 14:53:53 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 14:53:55 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 14:53:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:53:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:53:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:54:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:54:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:54:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:54:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:54:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:54:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:54:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:54:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:54:31 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:54:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:54:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:54:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:54:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:54:48 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 14:54:56 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 14:54:56 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 14:54:58 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 14:54:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:54:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:54:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:55:01 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:55:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:55:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:55:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:55:16 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:55:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:55:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:55:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:55:31 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:55:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:55:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:55:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:55:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:55:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:55:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:55:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:56:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:56:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:56:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:56:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:56:16 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:56:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:56:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:56:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:56:31 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:56:33 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 14:56:39 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 14:56:39 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 14:56:40 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 14:56:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:56:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:56:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:56:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:56:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:56:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:56:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:57:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:57:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:57:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:57:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:57:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:57:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:57:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:57:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:57:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:57:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:57:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:57:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:57:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:57:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:57:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:57:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:57:58 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 14:58:01 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:58:03 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 14:58:04 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 14:58:05 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 14:58:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:58:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:58:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:58:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:58:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:58:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:58:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:58:31 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:58:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:58:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:58:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:58:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:58:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:58:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:58:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:59:01 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:59:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:59:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:59:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:59:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:59:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:59:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:59:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:59:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:59:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:59:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:59:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 14:59:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 14:59:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 14:59:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 14:59:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:00:01 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:00:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:00:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:00:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:00:16 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:00:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:00:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:00:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:00:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:00:37 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:00:42 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:00:43 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:00:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:00:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:00:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:00:44 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:00:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:00:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:00:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:00:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:01:01 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:01:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:01:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:01:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:01:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:01:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:01:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:01:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:01:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:01:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:01:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:01:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:01:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:01:53 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:01:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:01:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:01:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:02:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:02:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:02:13 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:02:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:02:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:02:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:02:19 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:02:20 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:02:21 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:02:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:02:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:02:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:02:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:02:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:02:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:02:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:02:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:02:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:02:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:02:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:03:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:03:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:03:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:03:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:03:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:03:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:03:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:03:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:03:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:03:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:03:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:03:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:03:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:03:58 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:03:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:03:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:03:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:04:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:04:11 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:04:12 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:04:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:04:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:04:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:04:14 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:04:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:04:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:04:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:04:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:04:31 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:04:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:04:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:04:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:04:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:04:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:04:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:04:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:05:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:05:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:05:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:05:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:05:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:05:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:05:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:05:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:05:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:05:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:05:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:05:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:05:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:05:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:05:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:05:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:06:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:06:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:06:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:06:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:06:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:06:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:06:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:06:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:06:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:06:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:06:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:06:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:06:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:06:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:06:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:06:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:07:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:07:12 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:07:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:07:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:07:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:07:17 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:07:17 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:07:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:07:18 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:07:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:07:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:07:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:07:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:07:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:07:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:07:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:07:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:07:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:07:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:07:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:08:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:08:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:08:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:08:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:08:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:08:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:08:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:08:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:08:31 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:08:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:08:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:08:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:08:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:08:58 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:08:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:08:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:08:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:09:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:09:04 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:09:04 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:09:06 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:09:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:09:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:09:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:09:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:09:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:09:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:09:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:09:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:09:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:09:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:09:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:09:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:09:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:09:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:09:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:10:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:10:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:10:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:10:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:10:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:10:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:10:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:10:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:10:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:10:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:10:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:10:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:10:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:10:58 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:10:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:10:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:10:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:11:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:11:08 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:11:08 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:11:10 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:11:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:11:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:11:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:11:16 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:11:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:11:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:11:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:11:31 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:11:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:11:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:11:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:11:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:11:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:11:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:11:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:12:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:12:08 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:12:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:12:13 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:12:13 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:12:14 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:12:14 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:12:16 ------> sysbmfx.MenuController ------- Clicado no botão despacho!
+25/06/2020 15:12:16 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:12:16 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:12:16 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:12:17 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:12:19 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:12:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:12:28 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:12:28 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:12:32 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:12:39 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:12:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:12:43 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:12:43 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:12:46 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:12:46 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:12:47 ------> sysbmfx.MenuController ------- Clicado no botão despacho!
+25/06/2020 15:12:47 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:12:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:12:47 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:12:47 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:12:51 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:12:52 ------> sysbmfx.DashboardDespachoController$2 ------- tela da ocorrência aberta com o id do rgo: 432834
+25/06/2020 15:12:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:12:58 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:12:58 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:13:02 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:13:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:13:02 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:13:02 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:13:06 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:23:51 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:23:57 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:23:57 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:24:11 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:24:44 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:24:51 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:24:51 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:24:55 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:25:28 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:25:34 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:25:34 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:25:36 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:30:56 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:31:42 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:31:42 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:31:43 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:33:21 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:35:21 ------> sysbmfx.SYSBMFX ------- Aplicativo Iniciado!
+25/06/2020 15:35:26 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:35:27 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:35:28 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!
+25/06/2020 15:35:31 ------> sysbmfx.MenuController ------- Clicado no botão despacho!
+25/06/2020 15:35:31 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:35:31 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:35:31 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:35:35 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:35:35 ------> sysbmfx.DashboardDespachoController$2 ------- tela da ocorrência aberta com o id do rgo: 432855
+25/06/2020 15:35:46 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba a despachar
+25/06/2020 15:35:46 ------> sysbmfx.DashboardDespachoController$3 ------- Aba a despachar atualizada
+25/06/2020 15:35:46 ------> sysbmfx.DashboardDespachoController$3 ------- Atualizando aba despachadas
+25/06/2020 15:35:50 ------> sysbmfx.DashboardDespachoController$3 ------- Aba despachadas atualizadas
+25/06/2020 15:36:19 ------> sysbmfx.TelaLogin ------- Clicado no botão login
+25/06/2020 15:36:19 ------> sysbmfx.TelaLogin ------- Login com sucesso!
+25/06/2020 15:36:21 ------> sysbmfx.MenuController ------- Clicado no botão cadastrar RGO!

@@ -7,6 +7,7 @@ package sysbmfx;
 
 import bancodados.ConexaoMysql;
 import bancodados.Login;
+import classes.Log;
 import com.sun.deploy.ui.AboutDialog;
 import java.awt.Dialog;
 import java.awt.event.KeyEvent;
@@ -47,25 +48,40 @@ public class TelaLogin implements Initializable {
     }
     
     private void login(){
-          
+        
+        Log.gravar(this.getClass(),"Clicado no botão login");
+        
         try {
             if( new Login().realizarLogin(txtUsuario.getText(), txtSenha.getText()) ){
-            //if( new Login().realizarLogin("105997043","123456") ){
+                
+                Log.gravar(this.getClass(),"Login com sucesso!");
+                
                 MenuController mc = new MenuController();
                 mc.start();
+                
             }else{
+                
+                Log.gravar(this.getClass(),"Usuario invalido!");
+                
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Login");
                 alert.setHeaderText("Usuário ou senha incorretaa!");
                 alert.showAndWait();
             }
+        } catch (Exception ex) {
+            Log.gravar(this.getClass(),ex.getMessage());
+        }
+    }
+    
+    @FXML
+    private void onConfigurar(ActionEvent event){
+        
+        FormularioConfiguracaoController configuracaoController = new FormularioConfiguracaoController();
+        try {
+            configuracaoController.start();
         } catch (IOException ex) {
             Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }
     
     @Override

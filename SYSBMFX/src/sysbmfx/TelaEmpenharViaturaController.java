@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
@@ -35,6 +36,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Screen;
+import javafx.stage.Stage;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -48,10 +50,15 @@ public class TelaEmpenharViaturaController implements Initializable {
 
     private static int idrgoStatico;
     private int idrgo;
+    
+    
+    public static Consumer consumerStatico;
+    private Consumer consumer;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.idrgo = TelaEmpenharViaturaController.idrgoStatico;
+        this.consumer = TelaEmpenharViaturaController.consumerStatico;
         
         construirTabela();
 
@@ -125,26 +132,31 @@ public class TelaEmpenharViaturaController implements Initializable {
     private ObservableList<TabelaEmpenharViatura> obsTabela;
     private ObservableList<TabelaEmpenharViatura> obsTabelaClone;
 
-    public void start(int idrgo) throws IOException {
+    public void start(int idrgo, Consumer consumer) throws IOException {
 
         double height = SYSBMFX.stage.getHeight();
         double width = SYSBMFX.stage.getWidth();
+        
+        this.consumerStatico = consumer;
         
         TelaEmpenharViaturaController.idrgoStatico = idrgo;
 
         Parent root = FXMLLoader.load(getClass().getResource("TelaEmpenharViatura.fxml"));
         Scene scene = new Scene(root);
 
-        SYSBMFX.stage.setScene(scene);
+        Stage stage = new Stage();
+        
+        stage.setScene(scene);
         
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
 
-        SYSBMFX.stage.setX(SYSBMFX.stage.getX());
-        SYSBMFX.stage.setY(SYSBMFX.stage.getY());
-        SYSBMFX.stage.setWidth(width);
-        SYSBMFX.stage.setHeight(height);
+        stage.setX(SYSBMFX.stage.getX());
+        stage.setY(SYSBMFX.stage.getY());
+        stage.setWidth(width);
+        stage.setHeight(height);
 
+        stage.show();
     }
 
     @FXML
@@ -175,6 +187,7 @@ public class TelaEmpenharViaturaController implements Initializable {
                     0);
             
             mostrarSucesso("Viaturas empenhadas com sucesso!");
+            consumer.accept(new Object());
             
         } catch (SQLException ex) {
             mostrarAlerta("Erro!", "Erro ao inserir viatura!");
@@ -206,6 +219,7 @@ public class TelaEmpenharViaturaController implements Initializable {
                     1);
             
             mostrarSucesso("Viaturas empenhadas com sucesso!");
+            consumer.accept(new Object());
             
         } catch (SQLException ex) {
             mostrarAlerta("Erro!", "Erro ao inserir viatura!");
@@ -235,6 +249,7 @@ public class TelaEmpenharViaturaController implements Initializable {
                     2);
             
             mostrarSucesso("Viaturas empenhadas com sucesso!");
+            consumer.accept(new Object());
             
         } catch (SQLException ex) {
             mostrarAlerta("Erro!", "Erro ao inserir viatura!");
